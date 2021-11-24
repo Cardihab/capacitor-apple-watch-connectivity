@@ -10,6 +10,10 @@ var capacitorAppleWatchConnectivity = (function (exports, core) {
             console.log('ECHO', options);
             return options;
         }
+        async sendMessage(options) {
+            console.log(options);
+            throw new Error("Method not implemented.");
+        }
     }
 
     var web = /*#__PURE__*/Object.freeze({

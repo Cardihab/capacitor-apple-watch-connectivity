@@ -15,4 +15,18 @@ public class AppleWatchConnectivityPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+
+    @objc func sendMessage(_ call: CAPPluginCall) {
+        let messageId = call.getString("messageId") ?? ""
+        let message = call.getArray("message") ?? []
+        let result = implementation.sendMessage(messageBody: [
+            "messageId": messageId,
+            "message": message,
+        ])
+        if result {
+            call.resolve()
+        }
+        call.reject("Failed to send message")
+    }
+
 }

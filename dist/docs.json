@@ -20,6 +20,22 @@
         "docs": "",
         "complexTypes": [],
         "slug": "echo"
+      },
+      {
+        "name": "sendMessage",
+        "signature": "(options: { messageId: string; message: []; }) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ messageId: string; message: []; }"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "sendmessage"
       }
     ],
     "properties": []

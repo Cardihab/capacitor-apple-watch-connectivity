@@ -4,4 +4,8 @@ export interface AppleWatchConnectivityPlugin {
     }): Promise<{
         value: string;
     }>;
+    sendMessage(options: {
+        messageId: string;
+        message: [];
+    }): Promise<void>;
 }
