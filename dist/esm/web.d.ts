@@ -8,6 +8,6 @@ export declare class AppleWatchConnectivityWeb extends WebPlugin implements Appl
     }>;
     sendMessage(options: {
         messageId: string;
-        message: [];
+        message: Array<any>;
     }): Promise<void>;
 }

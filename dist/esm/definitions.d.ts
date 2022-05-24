@@ -6,6 +6,6 @@ export interface AppleWatchConnectivityPlugin {
     }>;
     sendMessage(options: {
         messageId: string;
-        message: [];
+        message: Array<any>;
     }): Promise<void>;
 }

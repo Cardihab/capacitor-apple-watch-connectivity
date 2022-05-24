@@ -8,7 +8,7 @@ export class AppleWatchConnectivityWeb extends WebPlugin implements AppleWatchCo
     return options;
   }
 
-  async sendMessage(options: { messageId: string; message: [] }): Promise<void> {
+  async sendMessage(options: { messageId: string; message: Array<any> }): Promise<void> {
     console.log(options);
     throw new Error("Method not implemented.");
   }
