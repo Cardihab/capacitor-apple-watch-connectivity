@@ -5,11 +5,11 @@ import WatchConnectivity
 
     var session: WCSession?
 
-    public override init() {
+    public init(delegateClass: WCSessionDelegate) {
         super.init()
         if WCSession.isSupported() {
             self.session = WCSession.default
-            self.session?.delegate = self
+            self.session?.delegate = delegateClass
             self.session?.activate()
         }
     }
@@ -21,30 +21,22 @@ import WatchConnectivity
 
     @objc public func sendMessage(messageBody: [String: Any]) -> Bool {
         if let validSession = self.session, validSession.isReachable {
-            validSession.sendMessage(
-                [
-                    "messageId": messageBody["messageId"]!,
-                    "message": messageBody["message"]!
-                ],
-                replyHandler: nil,
-                errorHandler: nil
-            )
+            do {
+                var payload = [] as [String]
+                for m in messageBody["message"] as? Array<Any> ?? [] {
+                    let jsonData = try JSONSerialization.data(withJSONObject: m)
+                    payload.append(String(data: jsonData, encoding: .utf8)!)
+                }
+                try validSession.updateApplicationContext([
+                    "message": payload
+                ])
+            } catch {
+                print(error)
+                return false
+            }
             return true
         } else {
             return false
         }
-    }
-}
-
-extension AppleWatchConnectivity: WCSessionDelegate {
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-    }
-
-    public func sessionDidBecomeInactive(_ session: WCSession) {
-        // TODO:: Add hooks
-    }
-
-    public func sessionDidDeactivate(_ session: WCSession) {
-        // TODO:: Add hooks
     }
 }
