@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`sendMessage(...)`](#sendmessage)
+* [`addListener('taskSelect', ...)`](#addlistenertaskselect)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -46,6 +47,22 @@ sendMessage(options: { messageId: string; message: Array<any>; }) => Promise<voi
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
 | **`options`** | <code>{ messageId: string; message: any[]; }</code> |
+
+--------------------
+
+
+### addListener('taskSelect', ...)
+
+```typescript
+addListener(eventName: 'taskSelect', listenerFunc: (data: any) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                                |
+| ------------------ | ----------------------------------- |
+| **`eventName`**    | <code>'taskSelect'</code>           |
+| **`listenerFunc`** | <code>(data: any) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
@@ -102,5 +119,12 @@ sendMessage(options: { messageId: string; message: Array<any>; }) => Promise<voi
 | --------- | ------------------------------------------------------------------ |
 | **join**  | (separator?: string \| undefined) =&gt; string                     |
 | **slice** | (start?: number \| undefined, end?: number \| undefined) =&gt; T[] |
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 </docgen-api>

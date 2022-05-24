@@ -38,6 +38,29 @@
           "Array"
         ],
         "slug": "sendmessage"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'taskSelect', listenerFunc: (data: any) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'taskSelect'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(data: any) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenertaskselect"
       }
     ],
     "properties": []
@@ -877,6 +900,22 @@
           "docs": "",
           "complexTypes": [],
           "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
         }
       ]
     }
