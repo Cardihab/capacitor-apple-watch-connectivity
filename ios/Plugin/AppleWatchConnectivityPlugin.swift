@@ -10,8 +10,8 @@ import WatchConnectivity
 public class AppleWatchConnectivityPlugin: CAPPlugin {
     private var implementation: AppleWatchConnectivity?;
 
-    public override init() {
-        super.init()
+    override public func load() {
+        super.load()
         implementation = AppleWatchConnectivity(delegateClass: self)
     }
 
