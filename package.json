@@ -1,6 +1,6 @@
 {
   "name": "capacitor-apple-watch-connectivity",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Apple watch connectivity capacitor plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
