@@ -20,7 +20,7 @@ import WatchConnectivity
     }
 
     @objc public func sendMessage(messageBody: [String: Any]) -> Bool {
-        if let validSession = self.session, validSession.isReachable {
+        if let validSession = self.session {
             do {
                 var payload = [] as [String]
                 for m in messageBody["message"] as? Array<Any> ?? [] {

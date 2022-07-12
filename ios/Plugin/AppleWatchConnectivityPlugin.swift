@@ -31,6 +31,7 @@ public class AppleWatchConnectivityPlugin: CAPPlugin {
         ])
         if result {
             call.resolve()
+            return
         }
         call.reject("Failed to send message")
     }
