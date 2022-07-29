@@ -28,7 +28,8 @@ import WatchConnectivity
                     payload.append(String(data: jsonData, encoding: .utf8)!)
                 }
                 try validSession.updateApplicationContext([
-                    "message": payload
+                    "message": payload,
+                    "date": Date()
                 ])
             } catch {
                 print(error)
