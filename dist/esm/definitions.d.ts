@@ -10,4 +10,5 @@ export interface AppleWatchConnectivityPlugin {
         message: Array<any>;
     }): Promise<void>;
     addListener(eventName: 'taskSelect', listenerFunc: (data: any) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+    addListener(eventName: 'notificationAction', listenerFunc: (data: any) => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 }

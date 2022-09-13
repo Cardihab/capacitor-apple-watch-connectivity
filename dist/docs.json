@@ -61,6 +61,29 @@
           "PluginListenerHandle"
         ],
         "slug": "addlistenertaskselect"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'notificationAction', listenerFunc: (data: any) => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'notificationAction'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(data: any) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenernotificationaction"
       }
     ],
     "properties": []

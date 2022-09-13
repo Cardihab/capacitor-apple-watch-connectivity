@@ -44,7 +44,7 @@ extension AppleWatchConnectivityPlugin: WCSessionDelegate {
 
     public func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         DispatchQueue.main.async{
-            self.notifyListeners("taskSelect", data: ["taskId": applicationContext["taskId"]!], retainUntilConsumed: true)
+            self.notifyListeners(applicationContext["type"] as! String, data: applicationContext, retainUntilConsumed: true)
         }
     }
 

@@ -16,6 +16,7 @@ npx cap sync
 * [`echo(...)`](#echo)
 * [`sendMessage(...)`](#sendmessage)
 * [`addListener('taskSelect', ...)`](#addlistenertaskselect)
+* [`addListener('notificationAction', ...)`](#addlistenernotificationaction)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -60,6 +61,22 @@ addListener(eventName: 'taskSelect', listenerFunc: (data: any) => void) => Promi
 | Param              | Type                                |
 | ------------------ | ----------------------------------- |
 | **`eventName`**    | <code>'taskSelect'</code>           |
+| **`listenerFunc`** | <code>(data: any) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener('notificationAction', ...)
+
+```typescript
+addListener(eventName: 'notificationAction', listenerFunc: (data: any) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                                |
+| ------------------ | ----------------------------------- |
+| **`eventName`**    | <code>'notificationAction'</code>   |
 | **`listenerFunc`** | <code>(data: any) =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
