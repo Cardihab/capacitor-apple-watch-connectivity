@@ -1,0 +1,3 @@
+# swiftlint: macOS-only binary, won't build in Linux CI
+neverBuiltDependencies:
+  - swiftlint
