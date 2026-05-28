@@ -23,10 +23,13 @@ let package = Package(
             ],
             path: "ios/Plugin",
             exclude: [
+                "AppleWatchConnectivityPlugin.h",
+                "AppleWatchConnectivityPlugin.m",
                 "Example.swift",
                 "ExamplePlugin.h",
                 "ExamplePlugin.m",
-                "ExamplePlugin.swift"
+                "ExamplePlugin.swift",
+                "Info.plist"
             ]
         )
     ]
