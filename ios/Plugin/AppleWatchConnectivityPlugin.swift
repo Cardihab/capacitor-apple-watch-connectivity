@@ -7,7 +7,13 @@ import WatchConnectivity
  * here: https://capacitorjs.com/docs/plugins/ios
  */
 @objc(AppleWatchConnectivityPlugin)
-public class AppleWatchConnectivityPlugin: CAPPlugin {
+public class AppleWatchConnectivityPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "AppleWatchConnectivityPlugin"
+    public let jsName = "AppleWatchConnectivity"
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "sendMessage", returnType: CAPPluginReturnPromise),
+    ]
     private var implementation: AppleWatchConnectivity?;
 
     override public func load() {
